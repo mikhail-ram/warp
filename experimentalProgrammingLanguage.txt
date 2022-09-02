@@ -1,0 +1,59 @@
+program
+    print1to10
+    add 5 7
+    printList
+end program
+
+print1to10
+    for i in 1..10
+        print i
+    end for
+end print1to10
+
+add x:int y:int
+    x + y
+end add int
+
+printList
+    list = [1 2 3 4 5]
+    for value in list
+        print list
+    end for
+end printList
+
+countdown n:int
+    while n > 0
+        print n
+        n--
+    end while
+end countdown
+
+multiplyListByN list:[int] n:int
+    for value in list
+        value = value * n
+    end for
+end multiplyListByN
+
+Number
+    digits = [5 1 9]
+    length = 3
+
+    printNumber
+        number = 0
+        # Creates a numeric representation of the struct data
+        # (0, 2), (1, 1) (2, 0)
+        for (index, power) in enumerate (length - 1)..0
+            number += digits[index] * (10 ^ power)
+        end for
+    end printNumber
+end Number
+
+isPrime n:int
+    if n <= 1
+        False
+    end if
+    else
+        mods = map (mod n) [2..(n `div` 2)]
+        not (any (== 0) mods)
+    end else
+end isPrime bool

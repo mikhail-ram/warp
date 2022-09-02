@@ -1,0 +1,4 @@
+program
+    print "Hello world!"
+    0
+end program Integer

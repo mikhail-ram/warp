@@ -1,0 +1,7 @@
+program
+    print (5 * 7)
+    print (5 / 7)
+    print (5 + 7)
+    print (5 - 7)
+    0
+end program Integer

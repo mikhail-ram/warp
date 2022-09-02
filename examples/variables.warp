@@ -1,0 +1,6 @@
+program
+    name:String = "John"
+    age:Integer = 17
+    print name + " is " + age + " years old."
+    0
+end program Integer

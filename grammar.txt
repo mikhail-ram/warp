@@ -1,0 +1,45 @@
+<digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+<integer> ::= <digit> | <digit><integer>
+<double> ::= <integer>.<integer>
+<number> ::= <integer> | <double>
+
+<smallLetter> ::= a | b | c ... x | y | z
+<bigLetter> ::= A | B | C ... X | Y | Z
+<alphabet> ::= <smallLetter> | <bigLetter>
+
+<specialCharacter> ::= ( | ) | [ | ] | ... | ! | @ | # | $
+
+<character> ::= <alphabet> | <digit> | <specialCharacter>
+
+<characterSet> ::= <smallLetter> | <bigLetter> |   | digit | <specialCharacter>
+
+<string> ::= <characterSet> | <characterSet><string>
+<quote> ::= "<string>"
+
+<identifier> ::= <alphabet> | <alphabet><identifier>
+<variable> ::= <smallLetter><identifier>
+<userType> ::= <bigLetter><identifier>
+
+<factor> ::= <number> | <variable> | ( <expression> )
+<term> ::= factor | factor (* | /) <term>
+<expression> ::= term | term (+ | -) <expression>
+
+<statement> ::= <quote> | <expression>
+
+<type> ::= String | Integer | Double | Boolean | <userType>
+
+<initialization> ::= <variable>:<type>
+<assignment> ::= <initialization> = <statement>
+
+<comparison> = <statement> (< | <= | == | >= | >) <statement>
+<condition> = <comparison> | <comparison> (and | or) <condition>
+
+<argument> ::= <initialization> | <initialization> <argument>
+
+<statementSequence> ::= <statement> | <statement>\n<statementSequence>
+
+<ifBlock> ::= if <condition>\n<statementSequence>\nend if
+<elseBlock> ::= else\n<statementSequence>\nend else
+<forBlock> ::= for <statement> in <statement>\n<statementSequence>\nend for
+<functionBlock> ::= <variable> <argument>\n<statementSequence>\nend <variable> <type>
+<emptyBlock> ::= <variable>\n<statementSequence>\nend <variable>

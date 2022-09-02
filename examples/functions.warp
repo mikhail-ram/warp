@@ -1,0 +1,8 @@
+addSeven x:Integer y:Integer
+    x + y + 7
+end addSeven Integer
+
+program
+    print (addSeven 2 3)
+    0
+end program Integer
